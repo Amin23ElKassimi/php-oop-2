@@ -7,7 +7,7 @@ class Category{
     /**
      * Constructs a new instance of type Category, given a name, a description and an optional image string url.
      *
-     * @param string $_name Category's name
+     * @param string $_name Category's Animal
      * @param string $_description Category's description
      */
     public function __construct(string $_animal, string $_description){
@@ -17,5 +17,5 @@ class Category{
 }
 
 //Argomentare le nueve istanze di Categorie 
-$dramma = new Category('Dramma', 'Appartenente alla categoria film Drammatici');
-$azione = new Category('Azione', 'Appartenente alla categoria film Azione');
+$cani = new Category('cani', 'Appartenente alla razza canina');
+$gatti = new Category('gatti', 'Appartenente alla razza felini');
