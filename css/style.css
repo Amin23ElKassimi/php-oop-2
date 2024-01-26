@@ -1,0 +1,20 @@
+main .card img.card-img-top {
+    height: 150px;
+    object-fit: cover;
+}
+
+main {
+    background-color: #5e5c5c;
+.card{
+    margin: 5px;
+    height: 350px;
+    
+    }
+
+}
+
+header{
+    color: red;
+    font-weight: bold;
+    background-color: #1f1f1f;
+}
