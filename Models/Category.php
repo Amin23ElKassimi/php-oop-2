@@ -15,7 +15,3 @@ class Category{
         $this->description = $_description;
     }
 }
-
-//Argomentare le nueve istanze di Categorie 
-$cani = new Category('cani', 'Appartenente alla razza canina');
-$gatti = new Category('gatti', 'Appartenente alla razza felini');

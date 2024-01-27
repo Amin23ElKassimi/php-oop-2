@@ -1,15 +1,29 @@
+<!-- Stampiamo delle card contenenti i dettagli dei prodotti,
+come immagine, 
+titolo, 
+prezzo, 
+icona della categoria
+ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia). -->
+
 
 
 <?php
     // Import delle classi da usare
     include_once __DIR__ . '/Models/Category.php';
     include_once __DIR__ . '/Models/Product.php';
+    include_once __DIR__ . '/Models/Cibo.php';
+    include_once __DIR__ . '/Models/Cuccie.php';
+    include_once __DIR__ . '/Models/Giocattoli.php';
+    
+    //Argomentare le nueve istanze di Categorie 
+    $cani = new Category('cani', 'Appartenente alla razza canina');
+    $gatti = new Category('gatti', 'Appartenente alla razza felini');
 
+
+    $cereals = new Product('34','nome','23.21','https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.96IGOaKpG3kZZsXfn3EWGwHaEK%26pid%3DApi&f=1&ipt=f3f1889a00699f715716ffe52d0c265f7422fbbf189e7fe351305b50b3947734&ipo=images',$cani);
 
     // Array Di prodotti
-    $products = [ $inception, $redemption, $fastfurios, $wednesday,
-                $inception, $redemption, $fastfurios, $wednesday
-    ];
+    $products = [ $cereals, $cereals,];
 
 ?>
 
@@ -41,31 +55,23 @@
         <main >
             <section class="row">
                 <!-- Ciclo For che scrolla l'array usata come libreria film -->
-                <?php foreach ($movies as $movie) { ?>
+                <?php foreach ($products as $product) { ?>
                     <div class="col-3">
                         <div class="card text-center">
                             <!-- Copertina -->
-                            <img src="<?php echo $movie->imageUrl; ?>" class="card-img-top img-fluid" alt="...">
+                            <img src="<?php echo $product->imageUrl; ?>" class="card-img-top img-fluid" alt="...">
                             <div class="card-body">
                                 <!-- Titolo -->
                                 <h5 class="card-title">
-                                    <?php echo $movie->title; ?>
+                                    <?php echo $product->getNome(); ?>
                                 </h5>
                                 <!-- Genere -->
                                 <h6 class="card-subtitle">
-                                    <?php echo $movie->genre->name; ?>
+                                    <?php echo $product->getCategoria(); ?>
                                 </h6>
-                                <!-- Durata -->
-                                <p class="card-text">
-                                    Durata <?php echo $movie->duration; ?> Minuti
-                                </p>
-                                <!-- Anno Realese -->
-                                <p class="card-text">
-                                    Realese: <?php echo $movie->releaseYear; ?>
-                                </p>
                                 <!-- Costo e Azione Acquista -->
                                 <a href="#" class="btn btn-success">
-                                    Acquista per soli <?php echo $movie->getPrice(); ?>&euro;
+                                    Acquista per soli <?php echo $product->getPrezzo(); ?>&euro;
                                 </a>
                             </div>
                         </div>

@@ -4,22 +4,23 @@
 /**
  * Classe specifica per i prodotti giocattolo.
  */
-class Giocattolo extends Prodotto {
+class Giocattolo extends Product {
     /** @var string Materiale del giocattolo. */
     private $materiale;
 
     /**
      * Costruttore della classe Giocattolo.
      *
-     * @param int    $id        Identificatore univoco del prodotto.
-     * @param string $nome      Nome del prodotto.
-     * @param float  $prezzo    Prezzo del prodotto.
-     * @param string $categoria Categoria del prodotto.
+     * @param int $ID Product Barcode 
+     * @param string $Name Product      
+     * @param float $_price The current price of the product
+     * @param string|null $_imageUrl product
+     * @param Category $Genere di 
      * @param string $materiale Materiale del giocattolo.
      */
-    public function __construct(int $id, string $nome, float $prezzo, string $categoria, string $materiale) {
+    public function __construct(int $id,string $nome, float $prezzo,string $imageUrl, Category $categoria, string $materiale) {
         // How to Call the Parent Constructor 
-        parent::__construct($id, $nome, $prezzo, $categoria);
+        parent::__construct($id, $nome, $prezzo,$imageUrl, $categoria);
         $this->materiale = $materiale;
     }
 

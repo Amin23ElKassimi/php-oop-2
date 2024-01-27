@@ -4,22 +4,23 @@
 /**
  * Classe specifica per le cucce.
  */
-class Cuccia extends Prodotto {
+class Cuccia extends Product {
     /** @var string Dimensioni della cuccia. */
     private $dimensioni;
 
     /**
      * Costruttore della classe Cuccia.
      *
-     * @param int    $id        Identificatore univoco del prodotto.
-     * @param string $nome      Nome del prodotto.
-     * @param float  $prezzo    Prezzo del prodotto.
-     * @param string $categoria Categoria del prodotto.
+     * @param int $ID Product Barcode 
+     * @param string $Name Product      
+     * @param float $_price The current price of the product
+     * @param string|null $_imageUrl product
+     * @param Category $Genere di 
      * @param string $dimensioni Dimensioni della cuccia.
      */
-    public function __construct(int $id, string $nome, float $prezzo, string $categoria, string $dimensioni) {
+    public function __construct(int $id,string $nome, float $prezzo,string $imageUrl, Category $categoria, string $dimensioni) {
         // How to Call the Parent Constructor
-        parent::__construct($id, $nome, $prezzo, $categoria);
+        parent::__construct($id, $nome, $prezzo,$imageUrl, $categoria);
         $this->dimensioni = $dimensioni;
     }
 
