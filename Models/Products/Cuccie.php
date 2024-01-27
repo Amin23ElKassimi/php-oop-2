@@ -1,6 +1,6 @@
 <?php
-
-
+    // Import delle classi da usare
+    require_once __DIR__ . '/Product.php';
 /**
  * Classe specifica per le cucce.
  */
@@ -18,6 +18,7 @@ class Cuccia extends Prodotto {
      * @param string $dimensioni Dimensioni della cuccia.
      */
     public function __construct(int $id, string $nome, float $prezzo, string $categoria, string $dimensioni) {
+        // How to Call the Parent Constructor
         parent::__construct($id, $nome, $prezzo, $categoria);
         $this->dimensioni = $dimensioni;
     }
@@ -30,12 +31,5 @@ class Cuccia extends Prodotto {
     public function getDimensioni(): string {
         return $this->dimensioni;
     }
-
-    // Altri metodi della classe Cuccia...
 }
-
-
-
-
-
 ?>

@@ -1,6 +1,6 @@
 <?php
-
-
+    // Import delle classi da usare
+    require_once __DIR__ . '/Product.php';
 /**
  * Classe specifica per i prodotti giocattolo.
  */
@@ -18,6 +18,7 @@ class Giocattolo extends Prodotto {
      * @param string $materiale Materiale del giocattolo.
      */
     public function __construct(int $id, string $nome, float $prezzo, string $categoria, string $materiale) {
+        // How to Call the Parent Constructor 
         parent::__construct($id, $nome, $prezzo, $categoria);
         $this->materiale = $materiale;
     }
@@ -30,6 +31,5 @@ class Giocattolo extends Prodotto {
     public function getMateriale(): string {
         return $this->materiale;
     }
-
-    // Altri metodi della classe Giocattolo...
 }
+?>
