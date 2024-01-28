@@ -20,10 +20,11 @@ ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
     $gatti = new Category('gatti', 'Appartenente alla razza felini');
 
 
-    $cereals = new Product('34','nome','23.21','https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.96IGOaKpG3kZZsXfn3EWGwHaEK%26pid%3DApi&f=1&ipt=f3f1889a00699f715716ffe52d0c265f7422fbbf189e7fe351305b50b3947734&ipo=images',$cani);
+    $cereals = new Product('34','nome','23.21',$cani,'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.96IGOaKpG3kZZsXfn3EWGwHaEK%26pid%3DApi&f=1&ipt=f3f1889a00699f715716ffe52d0c265f7422fbbf189e7fe351305b50b3947734&ipo=images');
+    $croccants = new Cuccie('34','nome','23.21',$gatti,'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.Wsi-SkLFC4BSH4LRuK_r8gHaEy%26pid%3DApi&f=1&ipt=6ca916acf61678e2ad56d289f648fd73a97bbe6b964cf2d84a1aae9fc8689dd5&ipo=images','medium');
 
     // Array Di prodotti
-    $products = [ $cereals, $cereals,];
+    $products = [ $cereals,$croccants];
 
 ?>
 
@@ -59,16 +60,16 @@ ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
                     <div class="col-3">
                         <div class="card text-center">
                             <!-- Copertina -->
-                            <img src="<?php echo $product->imageUrl; ?>" class="card-img-top img-fluid" alt="...">
+                            <img src="<?php echo $product->getimageUrl(); ?>" class="card-img-top img-fluid" alt="...">
                             <div class="card-body">
                                 <!-- Titolo -->
                                 <h5 class="card-title">
                                     <?php echo $product->getNome(); ?>
                                 </h5>
                                 <!-- Genere -->
-                                <h6 class="card-subtitle">
-                                    <?php echo $product->getCategoria(); ?>
-                                </h6>
+                                <h5 class="card-title">
+                                    <?php echo $product->getCategoria()->animal; ?>
+                                </h5>
                                 <!-- Costo e Azione Acquista -->
                                 <a href="#" class="btn btn-success">
                                     Acquista per soli <?php echo $product->getPrezzo(); ?>&euro;

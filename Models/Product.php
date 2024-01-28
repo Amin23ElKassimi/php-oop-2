@@ -8,8 +8,8 @@ class Product {
     private $id;
     private $nome;
     private $prezzo;
-    private $categoria;
     private $imageUrl;
+    private $categoria;
 
     /**
      * Costruttore della classe Movie. Usato come guida per i Prossimi Programmatori o x te stesso a mettere mano sulle funzioni dopo molto tempo.
@@ -21,12 +21,12 @@ class Product {
      * 
      */
     // Construct
-    public function __construct(int $id,string $nome, float $prezzo,string $imageUrl , Category $categoria) {
+    public function __construct(int $id,string $nome, float $prezzo, Category $categoria, string $imageUrl) {
         $this->id = $id;
         $this->nome = $nome;
         $this->prezzo = $prezzo;
-        $this->categoria = $categoria;
         $this->imageUrl = $imageUrl;
+        $this->categoria = $categoria;
     }
 
     // Methods
@@ -50,6 +50,4 @@ class Product {
         return $this->categoria;
     }
 }
-
-
 ?>

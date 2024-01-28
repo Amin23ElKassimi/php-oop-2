@@ -18,9 +18,9 @@ class Cibo extends Product {
      * @param Category $Genere di 
      * @param string $Tipo di prodotto
      */
-    public function __construct(int $id,string $nome, float $prezzo,string $imageUrl, Category $categoria, string $tipo) {
+    public function __construct(int $id,string $nome, float $prezzo,Category $categoria, string $imageUrl, string $tipo) {
         // How to Call the Parent Constructor
-        parent::__construct($id, $nome, $prezzo,$imageUrl, $categoria);
+        parent::__construct($id, $nome, $prezzo, $categoria, $imageUrl);
         $this->tipo = $tipo;
     }
 

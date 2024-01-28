@@ -4,7 +4,7 @@
 /**
  * Classe specifica per le cucce.
  */
-class Cuccia extends Product {
+class Cuccie extends Product {
     /** @var string Dimensioni della cuccia. */
     private $dimensioni;
 
@@ -18,9 +18,9 @@ class Cuccia extends Product {
      * @param Category $Genere di 
      * @param string $dimensioni Dimensioni della cuccia.
      */
-    public function __construct(int $id,string $nome, float $prezzo,string $imageUrl, Category $categoria, string $dimensioni) {
+    public function __construct(int $id,string $nome, float $prezzo,Category $categoria, string $imageUrl, string $dimensioni) {
         // How to Call the Parent Constructor
-        parent::__construct($id, $nome, $prezzo,$imageUrl, $categoria);
+        parent::__construct($id, $nome, $prezzo, $categoria, $imageUrl);
         $this->dimensioni = $dimensioni;
     }
 

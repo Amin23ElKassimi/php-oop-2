@@ -18,9 +18,9 @@ class Giocattolo extends Product {
      * @param Category $Genere di 
      * @param string $materiale Materiale del giocattolo.
      */
-    public function __construct(int $id,string $nome, float $prezzo,string $imageUrl, Category $categoria, string $materiale) {
+    public function __construct(int $id,string $nome, float $prezzo,Category $categoria, string $imageUrl, string $materiale) {
         // How to Call the Parent Constructor 
-        parent::__construct($id, $nome, $prezzo,$imageUrl, $categoria);
+        parent::__construct($id, $nome, $prezzo, $categoria, $imageUrl);
         $this->materiale = $materiale;
     }
 
