@@ -34,7 +34,7 @@ class Cuccie extends Product {
     }
 
     public function getAdditionalInfo(){
-        return 'Type: '. $this->dimensioni;
+        return 'Dimensioni: '. $this->dimensioni;
     }
 }
 ?>
