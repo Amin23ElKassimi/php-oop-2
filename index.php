@@ -23,6 +23,7 @@ ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
 
     // Array Di prodotti
     $products = [ $cereals,$croccants];
+    var_dump($products);
 
 ?>
 
@@ -71,10 +72,12 @@ ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
                                 <h6 class="card-title">
                                     <?php echo $product->getCategoria()->description; ?>
                                 </h6>
+                                <h6 class="card-title">
+                                    <?php echo $product->getTipo()->description; ?>
+                                </h6>
                                 <ul>
                                     <?php  foreach ($product as $chiave => $valore) {
-                                        var_dump($valore);
-                                        if (is_a($valore, 'Category')){ ?>
+                                        if (is_a($valore, 'Cibo')){ ?>
                                             <li>
                                                 <?php echo $chiave; ?>: <?php echo $valore->name; ?>
                                             </li>
