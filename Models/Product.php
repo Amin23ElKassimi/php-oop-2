@@ -49,5 +49,8 @@ class Product {
     public function getCategoria() {
         return $this->categoria;
     }
+    public function getAdditionalInfo(){
+        return false;
+    }
 }
 ?>

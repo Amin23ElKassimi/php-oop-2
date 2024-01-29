@@ -6,7 +6,7 @@
  */
 class Giocattolo extends Product {
     /** @var string Materiale del giocattolo. */
-    private $materiale;
+    public $materiale;
 
     /**
      * Costruttore della classe Giocattolo.
@@ -31,6 +31,10 @@ class Giocattolo extends Product {
      */
     public function getMateriale(): string {
         return $this->materiale;
+    }
+    
+    public function getAdditionalInfo(){
+        return 'Materiale: '. $this->materiale;
     }
 }
 ?>

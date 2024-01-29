@@ -6,7 +6,6 @@ main .card img.card-img-top {
 main {
 .card{
     margin: 5px;
-    height: 350px;
     background-color: antiquewhite;
     }
 
@@ -17,3 +16,5 @@ header{
     font-weight: bold;
     background-color: #0e0bda;
 }
+
+

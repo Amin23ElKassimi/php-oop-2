@@ -5,7 +5,7 @@
  * Classe specifica per i prodotti alimentari.
  */
 class Cibo extends Product {
-    private $tipo;
+    public $tipo;
 
     /**
      * Costruttore della classe Cibo.
@@ -30,6 +30,9 @@ class Cibo extends Product {
      */
     public function getTipo(): string {
         return $this->tipo;
+    }
+    public function getAdditionalInfo(){
+        return 'Type: '. $this->tipo;
     }
 }
 ?>

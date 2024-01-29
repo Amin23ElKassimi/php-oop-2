@@ -6,7 +6,7 @@
  */
 class Cuccie extends Product {
     /** @var string Dimensioni della cuccia. */
-    private $dimensioni;
+    public $dimensioni;
 
     /**
      * Costruttore della classe Cuccia.
@@ -31,6 +31,10 @@ class Cuccie extends Product {
      */
     public function getDimensioni(): string {
         return $this->dimensioni;
+    }
+
+    public function getAdditionalInfo(){
+        return 'Type: '. $this->dimensioni;
     }
 }
 ?>
