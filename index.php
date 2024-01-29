@@ -73,7 +73,7 @@ ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
                                     <?php echo $product->getCategoria()->description; ?>
                                 </h6>
                                 <h6 class="card-title">
-                                    <?php echo $product->getTipo()->description; ?>
+                                    <?php echo $product->getTipo(); ?>
                                 </h6>
                                 <ul>
                                     <?php  foreach ($product as $chiave => $valore) {
