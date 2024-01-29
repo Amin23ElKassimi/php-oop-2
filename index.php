@@ -88,7 +88,6 @@ ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
                                 <a href="#" class="btn btn-success">
                                     Acquista per soli <?php echo $product->getPrezzo(); ?>&euro;
                                 </a>
-
                             </div>
                         </div>
                     </div>
