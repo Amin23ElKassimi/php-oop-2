@@ -15,3 +15,9 @@ class Category{
         $this->description = $_description;
     }
 }
+
+
+    
+    //Argomentare le nueve istanze di Categorie 
+    $cani = new Category('cani', 'Prodotto per la razza canina');
+    $gatti = new Category('gatti', 'Prodotto per la razza felini');

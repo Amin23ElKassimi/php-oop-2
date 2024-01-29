@@ -4,17 +4,16 @@ main .card img.card-img-top {
 }
 
 main {
-    background-color: #5e5c5c;
 .card{
     margin: 5px;
     height: 350px;
-    
+    background-color: antiquewhite;
     }
 
 }
 
 header{
-    color: red;
+    color: yellow;
     font-weight: bold;
-    background-color: #1f1f1f;
+    background-color: #0e0bda;
 }

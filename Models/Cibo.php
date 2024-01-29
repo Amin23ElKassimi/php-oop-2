@@ -5,7 +5,6 @@
  * Classe specifica per i prodotti alimentari.
  */
 class Cibo extends Product {
-    /** @var string Tipo di cibo (secco, umido, etc.). */
     private $tipo;
 
     /**

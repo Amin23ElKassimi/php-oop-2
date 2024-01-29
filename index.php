@@ -14,14 +14,12 @@ ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
     include_once __DIR__ . '/Models/Cibo.php';
     include_once __DIR__ . '/Models/Cuccie.php';
     include_once __DIR__ . '/Models/Giocattoli.php';
+
+
+    $cereals = new Product('34','Prodotto','23.21',$cani,'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Filfattoalimentare.it%2Fwp-content%2Fuploads%2F2020%2F09%2Fcane-croccantini-AdobeStock_302179902-1536x1024.jpeg&f=1&nofb=1&ipt=b2457d03a75aa0178f004ad1a1730dc881965bfab57e4d71822e655ed922af92&ipo=images');
+    $croccants = new Cibo('34','CroCats','23.21',$gatti,'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.Wsi-SkLFC4BSH4LRuK_r8gHaEy%26pid%3DApi&f=1&ipt=6ca916acf61678e2ad56d289f648fd73a97bbe6b964cf2d84a1aae9fc8689dd5&ipo=images','medium');
     
-    //Argomentare le nueve istanze di Categorie 
-    $cani = new Category('cani', 'Appartenente alla razza canina');
-    $gatti = new Category('gatti', 'Appartenente alla razza felini');
 
-
-    $cereals = new Product('34','nome','23.21',$cani,'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.96IGOaKpG3kZZsXfn3EWGwHaEK%26pid%3DApi&f=1&ipt=f3f1889a00699f715716ffe52d0c265f7422fbbf189e7fe351305b50b3947734&ipo=images');
-    $croccants = new Cuccie('34','nome','23.21',$gatti,'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.Wsi-SkLFC4BSH4LRuK_r8gHaEy%26pid%3DApi&f=1&ipt=6ca916acf61678e2ad56d289f648fd73a97bbe6b964cf2d84a1aae9fc8689dd5&ipo=images','medium');
 
     // Array Di prodotti
     $products = [ $cereals,$croccants];
@@ -47,7 +45,7 @@ ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
             <div class="row text-center p-3">
                 <div class="col-12">
                     <h1>
-                        Netflix
+                        Dammi la Zampa
                     </h1>
                 </div>
             </div>
@@ -70,10 +68,27 @@ ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
                                 <h5 class="card-title">
                                     <?php echo $product->getCategoria()->animal; ?>
                                 </h5>
+                                <h6 class="card-title">
+                                    <?php echo $product->getCategoria()->description; ?>
+                                </h6>
+                                <ul>
+                                    <?php  foreach ($product as $chiave => $valore) {
+                                        var_dump($valore);
+                                        if (is_a($valore, 'Category')){ ?>
+                                            <li>
+                                                <?php echo $chiave; ?>: <?php echo $valore->name; ?>
+                                            </li>
+                                        <?php } else { ?>
+                                            <li>
+                                                <?php echo $chiave; ?>: <?php echo $valore; ?>
+                                            </li>
+                                    <?php }} ?>
+                                </ul>
                                 <!-- Costo e Azione Acquista -->
                                 <a href="#" class="btn btn-success">
                                     Acquista per soli <?php echo $product->getPrezzo(); ?>&euro;
                                 </a>
+
                             </div>
                         </div>
                     </div>
